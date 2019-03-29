@@ -1,0 +1,19 @@
+{
+  "name": "pf-node-api",
+  "version": "1.0.0",
+  "description": "Restful API with nodejs using expressjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "api",
+    "restful"
+  ],
+  "license": "ISC"
+}
