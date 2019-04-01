@@ -1,0 +1,34 @@
+version: '3'
+networks:
+  pf: 
+    driver: bridge
+services:
+  nodejs:
+    container_name: nodejs
+    build: 
+      context: ./app
+    command: 
+      - npm
+      - start
+    volumes:
+      - './app:/usr/src'
+    working_dir: '/usr/src'
+    restart: on-failure
+    ports: 
+      - '811:3000'
+    links:
+      - postgre
+    networks:
+      - pf
+  postgre:
+    container_name: postgre
+    image: postgres:alpine
+    restart: always
+    volumes:
+        - './pgdata:/var/lib/postgresql/data'
+    ports:
+        - 5432:5432
+    environment:
+        POSTGRES_PASSWORD: adminpassword
+    networks:
+        - pf
