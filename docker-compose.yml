@@ -29,6 +29,8 @@ services:
     ports:
         - 5432:5432
     environment:
-        POSTGRES_PASSWORD: adminpassword
+        POSTGRES_DB: docker
+        POSTGRES_USER: docker
+        POSTGRES_PASSWORD:  
     networks:
         - pf

@@ -2,8 +2,10 @@ FROM node:8.15.0-alpine
 
 RUN npm install -g nodemon --no-optional
 
-RUN mkdir -p /usr/src/
+ADD ./index.js /usr/src/
+ADD ./package.json /usr/src/
+WORKDIR /usr/src/
 
-WORKDIR /usr/src/app
+RUN npm install
 
 EXPOSE 3000
