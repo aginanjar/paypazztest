@@ -21,18 +21,17 @@ For starting this API :
 * Pull the docker with ```docker-compose up -d```, wait for the seconds.
 * And you can access the API at ```http://localhost:811```
  
-The list of API(s) :
-|method|endponint|
-|-----|------|
-|get |http://localhost:811/api/v1/sign-in|
-|get |http://localhost:811/api/v1/company/shows|
-|post |http://localhost:811/api/v1/company/create|
-|patch |http://localhost:811/api/v1/company/update|
-|get |http://localhost:811/api/v1/company/get/:id|
-|delete |http://localhost:811/api/v1/company/delete/:id|
-|get |http://localhost:811/api/v1/employee/shows|
-|post |http://localhost:811/api/v1/employee/create|
-|patch |http://localhost:811/api/v1/employee/update|
-|get |http://localhost:811/api/v1/employee/get/:id|
-|delete |http://localhost:811/api/v1/employee/delete/:id|
+ The list of API(s) :
+
+* get :  http://localhost:811/api/v1/sign-in
+* get : http://localhost:811/api/v1/company/shows: 
+* post : http://localhost:811/api/v1/company/create: 
+* patch : http://localhost:811/api/v1/company/update: 
+* get : http://localhost:811/api/v1/company/get/:id: 
+* delete : http://localhost:811/api/v1/company/delete/:id: 
+* get : http://localhost:811/api/v1/employee/shows: 
+* post : http://localhost:811/api/v1/employee/create: 
+* patch : http://localhost:811/api/v1/employee/update: 
+* get : http://localhost:811/api/v1/employee/get/:id: 
+* delete : http://localhost:811/api/v1/employee/delete/:id: 
  
