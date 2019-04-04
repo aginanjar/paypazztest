@@ -1,9 +1,21 @@
-# Example of Restful with NodeJS, PostgreSql and Docker
+# Restful with NodeJS, PostgreSql and Docker
 This API is built with :
 * Node JS version : 8.15.0
 * npm version : 6.4.1
 * Docker : 2.0.0.2 (30215)
 * postgre Sql : 11.2
+
+Below are the project structure :
+```
+.
+├── controllers
+├── db
+│   ├── migrations
+│   └── seeds
+├── models
+├── routes
+└── test
+```
 
 Packages :
 * Expressjs
@@ -21,7 +33,7 @@ For starting this API :
 * Pull the docker with ```docker-compose up -d```, wait for the seconds.
 * And you can access the API at ```http://localhost:811```
  
- The list of API(s) :
+The list of API(s) :
 
 * get :  http://localhost:811/api/v1/sign-in
 * get : http://localhost:811/api/v1/company/shows: 
