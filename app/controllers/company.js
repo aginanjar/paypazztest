@@ -81,4 +81,19 @@ company.getById = (req, res, next) => {
         });
 };
 
+company.delete = (req, res, next) => {
+    let data = req.params;
+
+    return companyModel
+        .delete(data)
+        .then((result) => {
+            resultJson.success = true;
+            resultJson.message = 'Data successfully deleted.';
+            resultJson.data = result;
+            return res.status(200).json(resultJson);
+        })
+        .catch(function (error) {
+            next(error);
+        });
+};
 module.exports = company;

@@ -18,6 +18,7 @@ router.get('/company/shows', [auth.verifyToken], company.show);
 router.post('/company/create', [auth.verifyToken], company.create);
 router.patch('/company/update', [auth.verifyToken], company.update);
 router.get('/company/get/:id', [auth.verifyToken], company.getById);
+router.delete('/company/delete/:id', [auth.verifyToken], company.delete);
 
 // Employee
 

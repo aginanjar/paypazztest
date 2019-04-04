@@ -223,7 +223,23 @@ describe('API Routes', () => {
                     res.body.should.have.property('data');
                     res.body.data.should.equal(1);
 
-                    done();
+                    chai.request(server)
+                        .get('/api/v1/company/get/1')
+                        .set('x-access-token', dummytoken)
+                        .set('Content-Type', 'application/json')
+                        .end(function (err, res) {
+                            res.should.have.status(200);
+                            res.should.be.json;
+                            res.body.should.be.a('object');
+                            res.body.should.have.property('success');
+                            res.body.success.should.equal(true);
+                            res.body.should.have.property('message');
+                            res.body.message.should.equal('Data found.');
+                            res.body.should.have.property('data');
+                            res.body.data[0].name.should.equal('PT. Maju Makmur 1');
+
+                            done();
+                        });
                 });
         });
     });
@@ -244,6 +260,40 @@ describe('API Routes', () => {
                     res.body.message.should.equal('Data found.');
                     res.body.should.have.property('data');
                     res.body.data.length.should.equal(1);
+
+                    done();
+                });
+        });
+    });
+
+    describe('DELETE /api/v1/company/delete/:id', () => {
+        it('Should delete company by ID', (done) => {
+            chai.request(server)
+                .delete('/api/v1/company/delete/1')
+                .set('x-access-token', dummytoken)
+                .set('Content-Type', 'application/json')
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('success');
+                    res.body.success.should.equal(true);
+                    res.body.should.have.property('message');
+                    res.body.message.should.equal('Data successfully deleted.');
+
+                    chai.request(server)
+                        .get('/api/v1/company/shows')
+                        .set('x-access-token', dummytoken)
+                        .set('Content-Type', 'application/json')
+                        .end(function (err, res) {
+                            res.should.have.status(200);
+                            res.should.be.json;
+                            res.body.should.be.a('object');
+                            res.body.should.have.property('success');
+                            res.body.success.should.equal(true);
+                            res.body.should.have.property('data');
+                            res.body.data.length.should.equal(2);
+                        });
 
                     done();
                 });

@@ -30,6 +30,11 @@ module.exports = {
         return Company()
             .where('id', input.id);
         },
+    delete: (input) => {
+        return Company()
+            .where('id', input.id)
+            .del();
+    },
     validate: (data) => {
         let message = '';
         let pass = true;
