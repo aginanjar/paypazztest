@@ -29,7 +29,7 @@ For starting this API :
 * Open your favorite terminal 
 * Start your Docker
 * Clone the repo first with ```git clone git@github.com:aginanjar/paypazztest.git```
-* Switch directory with ```cd paypazztest```
+* Switch directory with ```cd skeleton-rest-node```
 * Pull the docker with ```docker-compose up -d```, wait for the seconds.
 * And you can access the API at ```http://localhost:811```
  
